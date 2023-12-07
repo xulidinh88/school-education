@@ -1,6 +1,13 @@
+import {
+  Sheet,
+  SheetContent,
+  SheetTitle,
+  SheetTrigger,
+} from "@/components/ui/sheet";
+
 export const Header = () => {
   return (
-    <header className="w-full">
+    <header className="w-full p-[18px]">
       <div className="relative flex justify-center items-center border-[2px] border-grey-15 bg-orange-90 rounded-lg overflow-hidden max-h-[45px] h-[45px] md:max-h-[62px] md:h-[62px] w-full">
         <img
           className="absolute md:left-0 md:top-[-131px] md:w-[224px] md:h-[224px] left-[-9px] top-[-2px] w-[50px] h-[50px] opacity-50"
@@ -113,22 +120,69 @@ export const Header = () => {
             />
           </svg>
         </div>
-        <div className="mobile-menu md:hidden border-l-[2px] border-grey-15 bg-orange-95 flex justify-center items-center h-full px-[30px] py-[16px] cursor-pointer">
-          <svg
-            width="28"
-            height="28"
-            viewBox="0 0 28 28"
-            fill="none"
-            xmlns="http://www.w3.org/2000/svg"
-          >
-            <path
-              fill-rule="evenodd"
-              clip-rule="evenodd"
-              d="M3.5 7.875C3.5 7.39175 3.89175 7 4.375 7H23.625C24.1082 7 24.5 7.39175 24.5 7.875C24.5 8.35825 24.1082 8.75 23.625 8.75H4.375C3.89175 8.75 3.5 8.35825 3.5 7.875ZM3.5 14C3.5 13.5168 3.89175 13.125 4.375 13.125H23.625C24.1082 13.125 24.5 13.5168 24.5 14C24.5 14.4832 24.1082 14.875 23.625 14.875H4.375C3.89175 14.875 3.5 14.4832 3.5 14ZM13.125 20.125C13.125 19.6418 13.5168 19.25 14 19.25H23.625C24.1082 19.25 24.5 19.6418 24.5 20.125C24.5 20.6082 24.1082 21 23.625 21H14C13.5168 21 13.125 20.6082 13.125 20.125Z"
-              fill="#262626"
-            />
-          </svg>
-        </div>
+
+        <Sheet>
+          <SheetTrigger asChild>
+            <div className="mobile-menu md:hidden border-l-[2px] border-grey-15 bg-orange-95 flex justify-center items-center h-full px-[30px] py-[16px] cursor-pointer">
+              <svg
+                width="28"
+                height="28"
+                viewBox="0 0 28 28"
+                fill="none"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <path
+                  fill-rule="evenodd"
+                  clip-rule="evenodd"
+                  d="M3.5 7.875C3.5 7.39175 3.89175 7 4.375 7H23.625C24.1082 7 24.5 7.39175 24.5 7.875C24.5 8.35825 24.1082 8.75 23.625 8.75H4.375C3.89175 8.75 3.5 8.35825 3.5 7.875ZM3.5 14C3.5 13.5168 3.89175 13.125 4.375 13.125H23.625C24.1082 13.125 24.5 13.5168 24.5 14C24.5 14.4832 24.1082 14.875 23.625 14.875H4.375C3.89175 14.875 3.5 14.4832 3.5 14ZM13.125 20.125C13.125 19.6418 13.5168 19.25 14 19.25H23.625C24.1082 19.25 24.5 19.6418 24.5 20.125C24.5 20.6082 24.1082 21 23.625 21H14C13.5168 21 13.125 20.6082 13.125 20.125Z"
+                  fill="#262626"
+                />
+              </svg>
+            </div>
+          </SheetTrigger>
+          <SheetContent>
+            <SheetTitle>Menu</SheetTitle>
+            <div className="w-full">
+              <ul className="flex flex-col h-full">
+                <a className="h-full">
+                  <li className="h-full px-[30px] py-[16px] font-medium cursor-pointer bg-orange-95">
+                    Home
+                  </li>
+                </a>
+
+                <a className="h-full">
+                  <li className="h-full px-[30px] py-[16px] font-medium cursor-pointer ">
+                    About Us
+                  </li>
+                </a>
+
+                <a className="h-full">
+                  <li className="h-full px-[30px] py-[16px] font-medium cursor-pointer ">
+                    Academics
+                  </li>
+                </a>
+
+                <a className="h-full">
+                  <li className="h-full px-[30px] py-[16px] font-medium cursor-pointer ">
+                    Admissions
+                  </li>
+                </a>
+
+                <a className="h-full">
+                  <li className="h-full px-[30px] py-[16px] font-medium cursor-pointer ">
+                    Student Life
+                  </li>
+                </a>
+
+                <a className="h-full">
+                  <li className="h-full px-[30px] py-[16px] font-medium cursor-pointer">
+                    Contact
+                  </li>
+                </a>
+              </ul>
+            </div>
+          </SheetContent>
+        </Sheet>
 
         <div className="menu h-full hidden md:block">
           <ul className="flex h-full items-center">
@@ -138,21 +192,35 @@ export const Header = () => {
               </li>
             </a>
 
-            <li className="h-full px-[30px] py-[16px] font-medium border-l-[2px] border-grey-15 cursor-pointer hover:bg-orange-95">
-              About Us
-            </li>
-            <li className="h-full px-[30px] py-[16px] font-medium border-l-[2px] border-grey-15 cursor-pointer hover:bg-orange-95">
-              Academics
-            </li>
-            <li className="h-full px-[30px] py-[16px] font-medium border-l-[2px] border-grey-15 cursor-pointer hover:bg-orange-95">
-              Admissions
-            </li>
-            <li className="h-full px-[30px] py-[16px] font-medium border-l-[2px] border-grey-15 cursor-pointer hover:bg-orange-95">
-              Student Life
-            </li>
-            <li className="h-full px-[30px] py-[16px] font-medium border-l-[2px] border-grey-15 cursor-pointer bg-orange-65 hover:bg-orange-95">
-              Contact
-            </li>
+            <a className="h-full">
+              <li className="h-full px-[30px] py-[16px] font-medium border-l-[2px] border-grey-15 cursor-pointer hover:bg-orange-95">
+                About Us
+              </li>
+            </a>
+
+            <a className="h-full">
+              <li className="h-full px-[30px] py-[16px] font-medium border-l-[2px] border-grey-15 cursor-pointer hover:bg-orange-95">
+                Academics
+              </li>
+            </a>
+
+            <a className="h-full">
+              <li className="h-full px-[30px] py-[16px] font-medium border-l-[2px] border-grey-15 cursor-pointer hover:bg-orange-95">
+                Admissions
+              </li>
+            </a>
+
+            <a className="h-full">
+              <li className="h-full px-[30px] py-[16px] font-medium border-l-[2px] border-grey-15 cursor-pointer hover:bg-orange-95">
+                Student Life
+              </li>
+            </a>
+
+            <a className="h-full">
+              <li className="h-full px-[30px] py-[16px] font-medium border-l-[2px] border-grey-15 cursor-pointer bg-orange-65 hover:bg-orange-95">
+                Contact
+              </li>
+            </a>
           </ul>
         </div>
       </nav>
